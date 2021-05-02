@@ -24,6 +24,16 @@ h2 {
   -webkit-box-orient: vertical;
 }
 
+.product_screen_img {
+  width: 26rem;
+  height: 36rem;
+}
+
+.productDesc {
+  text-transform: capitalize;
+  text-align: justify;
+}
+
 .rating span {
   margin: 0.09rem;
 }

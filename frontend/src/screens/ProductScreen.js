@@ -41,10 +41,14 @@ const ProductScreen = ({ history, match }) => {
         <Message variant='danger'>{error}</Message>
       ) : (
         <Row>
-          <Col md={6}>
-            <Image src={product.image} alt={product.name} fluid />
+          <Col md={5}>
+            <Image
+              src={product.image}
+              alt={product.name}
+              className='product_screen_img'
+            />
           </Col>
-          <Col md={3}>
+          <Col md={4}>
             <ListGroup variant='flush'>
               <ListGroup.Item>
                 <h3>{product.name}</h3>
@@ -55,8 +59,10 @@ const ProductScreen = ({ history, match }) => {
                   text={`${product.numReviews} reviews`}
                 />
               </ListGroup.Item>
-              <ListGroup.Item>price: ₹ {product.price}</ListGroup.Item>
-              <ListGroup.Item>price: {product.description}</ListGroup.Item>
+              <ListGroup.Item>price: ₹ {product.price} / day</ListGroup.Item>
+              <ListGroup.Item className='productDesc'>
+                description: {product.description}
+              </ListGroup.Item>
             </ListGroup>
           </Col>
           <Col md={3}>
@@ -66,7 +72,7 @@ const ProductScreen = ({ history, match }) => {
                   <Row>
                     <Col>Price:</Col>
                     <Col>
-                      <strong>₹ {product.price}</strong>
+                      <strong>₹ {product.price} / day</strong>
                     </Col>
                   </Row>
                 </ListGroup.Item>
@@ -83,7 +89,7 @@ const ProductScreen = ({ history, match }) => {
                 {product.countInStock > 0 && (
                   <ListGroup.Item>
                     <Row>
-                      <Col>Qty</Col>
+                      <Col>Days</Col>
                       <Col>
                         <Form.Control
                           as='select'
