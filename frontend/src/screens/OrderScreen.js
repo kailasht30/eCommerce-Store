@@ -89,9 +89,9 @@ const OrderScreen = ({ match }) => {
                 {order.shippingAddress.postalCode},{' '}
                 {order.shippingAddress.country}
               </p>
-              {order.isPDelivered ? (
+              {order.isDelivered ? (
                 <Mesaage variant='success'>
-                  Delivered on {order.deliveredAt}
+                  <i className='fas fa-check' style={{ color: 'green' }}></i>
                 </Mesaage>
               ) : (
                 <Mesaage variant='danger'>Not Delivered</Mesaage>
