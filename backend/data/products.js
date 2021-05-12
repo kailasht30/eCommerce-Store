@@ -36,8 +36,7 @@ const products = [
     numReviews: 15,
   },
   {
-    name:
-      'Superintelligence: Paths, Dangers, Strategies Paperback – 14 July 2016',
+    name: 'Superintelligence: Paths, Dangers, Strategies Paperback – 14 July 2016',
     image: '/images/sup.jpg',
     description:
       'The human brain has some capabilities that the brains of other animals lack. It is to these distinctive capabilities that our species owes its dominant position.',
@@ -49,8 +48,7 @@ const products = [
     numReviews: 18,
   },
   {
-    name:
-      'Six Easy Pieces: Essentials of Physics Explained by Its Most Brilliant',
+    name: 'Six Easy Pieces: Essentials of Physics Explained by Its Most Brilliant',
     image: '/images/six.jpg',
     description:
       'In these classic lessons, Feynman introduces the general reader to the following topics: atoms, basic physics, energy, gravitation, quantum mechanics, and the relationship of physics to other topics. With his dazzling and inimitable wit, Feynman presents each discussion with a minimum of jargon. Filled with wonderful examples and clever illustrations, Six Easy Pieces is the ideal introduction to the fundamentals of physics by one of the most admired and accessible physicists of modern times.',
