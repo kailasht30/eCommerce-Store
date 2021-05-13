@@ -28,7 +28,10 @@ const ProductListScreen = ({ history, match }) => {
     }
   };
 
-  const createProductHandler = () => {};
+  const createProductHandler = () => {
+    console.log(userInfo._id);
+    console.log(products.filter((item) => item.user === userInfo._id).length);
+  };
 
   return (
     <>
@@ -47,48 +50,49 @@ const ProductListScreen = ({ history, match }) => {
         <Loader />
       ) : error ? (
         <Message variant='danger'>{error}</Message>
+      ) : products.filter((item) => item.user === userInfo._id).length === 0 ? (
+        <Message variant='danger'>You do not have any products listed</Message>
       ) : (
-        <>
-          <Table striped bordered hover responsive className='table-sm'>
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>NAME</th>
-                <th>PRICE</th>
-                <th>CATEGORY</th>
-                <th>BRAND</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              {products
-                .filter((item) => item.user === userInfo._id)
-                .map((product) => (
-                  <tr key={product._id}>
-                    <td>{product._id}</td>
-                    <td>{product.name}</td>
-                    <td>${product.price}</td>
-                    <td>{product.category}</td>
-                    <td>{product.brand}</td>
-                    <td>
-                      <LinkContainer to={`/admin/product/${product._id}/edit`}>
-                        <Button variant='light' className='btn-sm'>
-                          <i className='fas fa-edit'></i>
-                        </Button>
-                      </LinkContainer>
-                      <Button
-                        variant='danger'
-                        className='btn-sm'
-                        onClick={() => deleteHandler(product._id)}
-                      >
-                        <i className='fas fa-trash'></i>
+        <Table striped bordered hover responsive className='table-sm'>
+          <thead>
+            <tr>
+              <th>{products.length}</th>
+              <th>ID</th>
+              <th>NAME</th>
+              <th>PRICE</th>
+              <th>CATEGORY</th>
+              <th>BRAND</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {products
+              .filter((item) => item.user === userInfo._id)
+              .map((product) => (
+                <tr key={product._id}>
+                  <td>{product._id}</td>
+                  <td>{product.name}</td>
+                  <td>${product.price}</td>
+                  <td>{product.category}</td>
+                  <td>{product.brand}</td>
+                  <td>
+                    <LinkContainer to={`/admin/product/${product._id}/edit`}>
+                      <Button variant='light' className='btn-sm'>
+                        <i className='fas fa-edit'></i>
                       </Button>
-                    </td>
-                  </tr>
-                ))}
-            </tbody>
-          </Table>
-        </>
+                    </LinkContainer>
+                    <Button
+                      variant='danger'
+                      className='btn-sm'
+                      onClick={() => deleteHandler(product._id)}
+                    >
+                      <i className='fas fa-trash'></i>
+                    </Button>
+                  </td>
+                </tr>
+              ))}
+          </tbody>
+        </Table>
       )}
     </>
   );
