@@ -26,7 +26,6 @@ import {
 } from '../constants/userConstants';
 
 import { ORDER_LIST_MY_RESET } from '../constants/orderConstants';
-import { CART_CLEAR_ITEMS } from '../constants/cartConstants';
 
 export const login = (email, password) => async (dispatch) => {
   try {
