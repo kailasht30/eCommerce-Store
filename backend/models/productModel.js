@@ -12,7 +12,6 @@ const reviewSchema = mongoose.Schema(
     },
     comment: {
       type: String,
-      required: true,
     },
     user: {
       type: mongoose.Schema.Types.ObjectId,
