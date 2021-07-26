@@ -1,4 +1,4 @@
-# OBLMS eCommerce Platform
+# eCommerce Platform
 
 > OBLMS eCommerce platform built with the MERN stack & Redux.
 
